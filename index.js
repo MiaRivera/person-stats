@@ -1,18 +1,10 @@
-console.log("it worked");
-function changeHeading(ev) {
+function changeDiv(ev) {
     ev.preventDefault()
     const f = ev.target
-    const input = f.personName.value
+    const name = f.personName.value
+    const age = f.personAge.value
     const div = document.querySelector('#stats-p')
-    div.innerHTML = input
-}
-
-function addInput(text) {
-    text.preventDefault()
-    const f = text.target
-    const input = f.yourInput.value
-    const div = document.querySelector('#stats-p')
-    div.innerHTML += '<l> </l>' + input
+    div.innerHTML = `${name} ${age}`
 }
 
 function changeColor(color) {
@@ -24,10 +16,7 @@ function changeColor(color) {
 }
 
 const personForm = document.querySelector('#person-form')
-personForm.addEventListener('submit', changeHeading)
-
-const formTwo = document.querySelector('#input-two')
-formTwo.addEventListener('submit', addInput)
+personForm.addEventListener('submit', changeDiv)
 
 const colorChange = document.querySelector('#color-choice')
 colorChange.addEventListener('submit', changeColor)
