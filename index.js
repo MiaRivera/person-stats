@@ -17,11 +17,16 @@ function changeDiv(ev) {
     list.appendChild(ageItem)
 
     const colorItem = document.createElement('li')
-    colorItem.textContent = `Favorite Color: ${color}`
+    colorItem.textContent = 'Favorite Color: '
     list.appendChild(colorItem)
-    
+
+    const colorDiv = document.createElement('div')
+    colorDiv.style.backgroundColor = color
+    colorDiv.style.width = '6rem'
+    colorDiv.style.height = '3rem'
+    colorItem.appendChild(colorDiv)
+
     //list.textContent = `${name} ${age}`
-    list.style.color = color
 
     div.appendChild(list)
     
