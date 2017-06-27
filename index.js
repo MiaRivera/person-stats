@@ -6,11 +6,25 @@ function changeDiv(ev) {
     const color = f.favoriteColor.value
     const div = document.querySelector('#stats')
 
-    const p = document.createElement('p')
-    p.textContent = `${name} ${age}`
-    p.style.color = color
+    const list = document.createElement('ul')
 
-    div.appendChild(p)
+    const nameItem = document.createElement('li')
+    nameItem.textContent = `Name: ${name}`
+    list.appendChild(nameItem)
+
+    const ageItem = document.createElement('li')
+    ageItem.textContent = `Age: ${age}`
+    list.appendChild(ageItem)
+
+    const colorItem = document.createElement('li')
+    colorItem.textContent = `Favorite Color: ${color}`
+    list.appendChild(colorItem)
+    
+    //list.textContent = `${name} ${age}`
+    list.style.color = color
+
+    div.appendChild(list)
+    
 
     //div.innerHTML = `${name} ${age}`
 }
